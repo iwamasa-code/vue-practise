@@ -5,6 +5,10 @@ const price1 = 40000;
 const price2 = 20000;
 const url1 = 'https://www.youtube.com/';
 const url2 = 'https://www.amazon.co.jp/';
+
+const buy = (itemName: string) => {
+  alert('Are you sure to buy ' + itemName + '?');
+};
 </script>
 
 <template>
@@ -14,12 +18,14 @@ const url2 = 'https://www.amazon.co.jp/';
     <div class="payment">
       <label>{{ itemName1 }}</label>
       <label>{{ price1 }} yen</label>
-      <a v-bind:href="url1">buy</a>
+      <a v-bind:href="url1">bought at...</a>
+      <button v-on:click="buy(itemName1)">buy</button>
     </div>
     <div class="payment">
       <label>{{ itemName2 }}</label>
       <label>{{ price2 }} yen</label>
-      <a v-bind:href="url2">buy</a>
+      <a v-bind:href="url2">bought at...</a>
+      <button v-on:click="buy(itemName2)">buy</button>
     </div>
   </div>
 </template>
